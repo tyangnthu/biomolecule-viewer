@@ -1,0 +1,86 @@
+{
+  "name": "biomolecule-viewer",
+  "displayName": "Biomolecule Viewer",
+  "publisher": "tzuhsiungyang",
+  "version": "0.1.0",
+  "description": "Local molecular structure viewing with Mol*.",
+  "license": "MIT",
+  "main": "./dist/extension.js",
+  "engines": {
+    "vscode": ">=1.95.0"
+  },
+  "categories": [
+    "Visualization"
+  ],
+  "activationEvents": [
+    "onCommand:biomoleculeViewer.open",
+    "onCommand:biomoleculeViewer.openPalette",
+    "onCustomEditor:biomoleculeViewer.preview"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "biomoleculeViewer.open",
+        "title": "Open with Biomolecule Viewer"
+      },
+      {
+        "command": "biomoleculeViewer.openPalette",
+        "title": "Open Structure...",
+        "category": "Biomolecule Viewer"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "biomoleculeViewer.open",
+          "when": "false"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "biomoleculeViewer.open",
+          "when": "resourceExtname =~ /\\.(pdb|ent|pdbqt|cif|mmcif|mcif|bcif|gro|xyz|mol|mol2|sdf|sd)$/i",
+          "group": "navigation"
+        }
+      ]
+    },
+    "customEditors": [
+      {
+        "viewType": "biomoleculeViewer.preview",
+        "displayName": "Biomolecule Viewer",
+        "priority": "option",
+        "selector": [
+          { "filenamePattern": "*.pdb" },
+          { "filenamePattern": "*.ent" },
+          { "filenamePattern": "*.pdbqt" },
+          { "filenamePattern": "*.cif" },
+          { "filenamePattern": "*.mmcif" },
+          { "filenamePattern": "*.mcif" },
+          { "filenamePattern": "*.bcif" },
+          { "filenamePattern": "*.gro" },
+          { "filenamePattern": "*.xyz" },
+          { "filenamePattern": "*.mol" },
+          { "filenamePattern": "*.mol2" },
+          { "filenamePattern": "*.sdf" },
+          { "filenamePattern": "*.sd" }
+        ]
+      }
+    ]
+  },
+  "scripts": {
+    "check-types": "tsc --noEmit",
+    "compile": "node esbuild.mjs",
+    "watch": "node esbuild.mjs --watch",
+    "package": "node esbuild.mjs --production",
+    "vscode:prepublish": "tsc --noEmit && node esbuild.mjs --production"
+  },
+  "dependencies": {
+    "molstar": "5.13.1"
+  },
+  "devDependencies": {
+    "@types/node": "22.10.2",
+    "@types/vscode": "1.95.0",
+    "esbuild": "0.28.2",
+    "typescript": "5.7.3"
+  }
+}

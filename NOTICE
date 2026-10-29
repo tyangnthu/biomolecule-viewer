@@ -1,0 +1,11 @@
+Biomolecule Viewer
+
+This extension is inspired by VSCoding-Sequence / Protein Viewer:
+https://github.com/molstar/VSCoding-Sequence
+Copyright (c) 2017 - now, Arian Jamasb. MIT License.
+
+The viewer is Mol*:
+https://github.com/molstar/molstar
+Copyright (c) 2017 - now, Mol* contributors. MIT License.
+The Mol* license is packaged as media/molstar.LICENSE. Notices embedded in the
+prebuilt Mol* viewer bundle are retained in media/molstar.js.

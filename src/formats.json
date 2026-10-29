@@ -1,0 +1,15 @@
+{
+  "pdb": { "format": "pdb", "isBinary": false },
+  "ent": { "format": "pdb", "isBinary": false },
+  "pdbqt": { "format": "pdbqt", "isBinary": false },
+  "cif": { "format": "mmcif", "isBinary": false },
+  "mmcif": { "format": "mmcif", "isBinary": false },
+  "mcif": { "format": "mmcif", "isBinary": false },
+  "bcif": { "format": "mmcif", "isBinary": true },
+  "gro": { "format": "gro", "isBinary": false },
+  "xyz": { "format": "xyz", "isBinary": false },
+  "mol": { "format": "mol", "isBinary": false },
+  "mol2": { "format": "mol2", "isBinary": false },
+  "sdf": { "format": "sdf", "isBinary": false },
+  "sd": { "format": "sdf", "isBinary": false }
+}
