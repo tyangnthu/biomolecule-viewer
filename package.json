@@ -4,6 +4,10 @@
   "publisher": "tzuhsiungyang",
   "version": "0.1.0",
   "description": "Local molecular structure viewing with Mol*.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tyangnthu/biomolecule-viewer.git"
+  },
   "license": "MIT",
   "main": "./dist/extension.js",
   "engines": {

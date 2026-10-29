@@ -34,7 +34,7 @@ jobs:
         run: |
           version="$(node -p "require('./package.json').version")"
           echo "VSIX=biomolecule-viewer-${version}.vsix" >> "$GITHUB_ENV"
-          npx @vscode/vsce package --out "$VSIX" --allow-missing-repository
+          npx @vscode/vsce package --out "$VSIX"
 
       - name: Upload VSIX artifact
         uses: actions/upload-artifact@v4
@@ -44,4 +44,4 @@ jobs:
           retention-days: 30
 
       - name: Publish to Visual Studio Marketplace
-        run: npx @vscode/vsce publish --oidc --packagePath "${{ env.VSIX }}" --allow-missing-repository
+        run: npx @vscode/vsce publish --oidc --packagePath "${{ env.VSIX }}"
